@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:find_house_apps/theme.dart';
+import 'package:find_house_apps/themeBasic.dart';
 
 class Basic extends StatelessWidget {
   const Basic({Key? key}) : super(key: key);
