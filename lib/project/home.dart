@@ -1,8 +1,11 @@
 import 'package:find_house_apps/models/cityModel.dart';
 import 'package:find_house_apps/models/spaceModel.dart';
+import 'package:find_house_apps/models/tipsModel.dart';
 import 'package:find_house_apps/themeProject.dart';
+import 'package:find_house_apps/widget_projects/bottom_bar.dart';
 import 'package:find_house_apps/widget_projects/city_card.dart';
 import 'package:find_house_apps/widget_projects/space_card.dart';
+import 'package:find_house_apps/widget_projects/tips_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,9 +16,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: vertical,
+          padding: EdgeInsets.only(
+            top: vertical,
           ),
+          // padding: EdgeInsets.symmetric(
+          //   vertical: vertical,
+          // ),
           child: ListView(
             children: [
               // NOTE: TITLE/HEADER
@@ -239,22 +245,80 @@ class HomePage extends StatelessWidget {
                   style: regularStyle,
                 ),
               ),
-              // Container(
-              //   margin: const EdgeInsets.symmetric(
-              //     horizontal: 24,
-              //   ),
-              //   width: 329,
-              //   child: ListView(
-              //     scrollDirection: Axis.vertical,
-              //     children: [
-              //       SpaceCard(),
-              //     ],
-              //   ),
-              // ),
+              const SizedBox(
+                height: 16,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: horizontal,
+                ),
+                child: Column(
+                  children: [
+                    TipsCard(
+                      tips: Tips(
+                        id: 1,
+                        name: "City Guidelines",
+                        imageURL: "assets/images/projects/tips1.png",
+                        updatedAt: "20 Apr",
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    TipsCard(
+                      tips: Tips(
+                        id: 2,
+                        name: "Jakarta Fairship",
+                        imageURL: "assets/images/projects/tips2.png",
+                        updatedAt: "11 Dec",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 80 + vertical,
+              ),
             ],
           ),
         ),
       ),
+      //NOTE: BOTTOMBAR
+      floatingActionButton: Container(
+        height: 65,
+        width: MediaQuery.of(context).size.width - (2 * horizontal),
+        margin: EdgeInsets.symmetric(
+          horizontal: horizontal,
+        ),
+        decoration: BoxDecoration(
+          color: backCitiesColor,
+          borderRadius: BorderRadius.circular(
+            23,
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: const [
+            BottomBarCard(
+              imageURL: "assets/images/projects/icon_home.png",
+              isActive: true,
+            ),
+            BottomBarCard(
+              imageURL: "assets/images/projects/icon_mail.png",
+              isActive: false,
+            ),
+            BottomBarCard(
+              imageURL: "assets/images/projects/icon_chat.png",
+              isActive: false,
+            ),
+            BottomBarCard(
+              imageURL: "assets/images/projects/icon_love.png",
+              isActive: false,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
