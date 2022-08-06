@@ -1,6 +1,7 @@
 import 'package:find_house_apps/models/cityModel.dart';
 import 'package:find_house_apps/models/spaceModel.dart';
 import 'package:find_house_apps/models/tipsModel.dart';
+import 'package:find_house_apps/project/details/detailsSpace1.dart';
 import 'package:find_house_apps/themeProject.dart';
 import 'package:find_house_apps/widget_projects/bottom_bar.dart';
 import 'package:find_house_apps/widget_projects/city_card.dart';
@@ -159,15 +160,25 @@ class HomePage extends StatelessWidget {
                     children: [
                       Column(
                         children: [
-                          SpaceCard(
-                            space: Space(
-                              id: 1,
-                              name: "Kuretakeso Hott",
-                              imageURL: "assets/images/projects/space1.png",
-                              price: 52,
-                              city: "Bandung",
-                              country: "Germany",
-                              rating: 4,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const DetailSpace1(),
+                                ),
+                              );
+                            },
+                            child: SpaceCard(
+                              space: Space(
+                                id: 1,
+                                name: "Kuretakeso Hott",
+                                imageURL: "assets/images/projects/space1.png",
+                                price: 52,
+                                city: "Bandung",
+                                country: "Germany",
+                                rating: 4,
+                              ),
                             ),
                           ),
                           const SizedBox(
