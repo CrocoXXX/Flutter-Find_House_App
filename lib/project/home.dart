@@ -2,6 +2,10 @@ import 'package:find_house_apps/models/cityModel.dart';
 import 'package:find_house_apps/models/spaceModel.dart';
 import 'package:find_house_apps/models/tipsModel.dart';
 import 'package:find_house_apps/project/details/detailsSpace1.dart';
+import 'package:find_house_apps/project/details/detailsSpace2.dart';
+import 'package:find_house_apps/project/details/detailsSpace3.dart';
+import 'package:find_house_apps/project/details/detailsSpace4.dart';
+import 'package:find_house_apps/project/details/detailsSpace5.dart';
 import 'package:find_house_apps/themeProject.dart';
 import 'package:find_house_apps/widget_projects/bottom_bar.dart';
 import 'package:find_house_apps/widget_projects/city_card.dart';
@@ -15,6 +19,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: whiteColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
@@ -184,57 +189,97 @@ class HomePage extends StatelessWidget {
                           const SizedBox(
                             height: 30,
                           ),
-                          SpaceCard(
-                            space: Space(
-                              id: 2,
-                              name: "Roemah Nenek",
-                              imageURL: "assets/images/projects/space2.png",
-                              price: 11,
-                              city: "Seattle",
-                              country: "Bogor",
-                              rating: 5,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const DetailSpace2(),
+                                ),
+                              );
+                            },
+                            child: SpaceCard(
+                              space: Space(
+                                id: 2,
+                                name: "Roemah Nenek",
+                                imageURL: "assets/images/projects/space2.png",
+                                price: 11,
+                                city: "Seattle",
+                                country: "Bogor",
+                                rating: 5,
+                              ),
                             ),
                           ),
                           const SizedBox(
                             height: 30,
                           ),
-                          SpaceCard(
-                            space: Space(
-                              id: 3,
-                              name: "Darrling How",
-                              imageURL: "assets/images/projects/space3.png",
-                              price: 20,
-                              city: "Jakarta",
-                              country: "Indonesia",
-                              rating: 3,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const DetailSpace3(),
+                                ),
+                              );
+                            },
+                            child: SpaceCard(
+                              space: Space(
+                                id: 3,
+                                name: "Darrling How",
+                                imageURL: "assets/images/projects/space3.png",
+                                price: 20,
+                                city: "Jakarta",
+                                country: "Indonesia",
+                                rating: 3,
+                              ),
                             ),
                           ),
                           const SizedBox(
                             height: 30,
                           ),
-                          SpaceCard(
-                            space: Space(
-                              id: 4,
-                              name: "Orang Crown",
-                              imageURL: "assets/images/projects/space4.png",
-                              price: 552,
-                              city: "Halla",
-                              country: "Sumatra",
-                              rating: 5,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const DetailSpace4(),
+                                ),
+                              );
+                            },
+                            child: SpaceCard(
+                              space: Space(
+                                id: 4,
+                                name: "Orang Crown",
+                                imageURL: "assets/images/projects/space4.png",
+                                price: 552,
+                                city: "Halla",
+                                country: "Sumatra",
+                                rating: 5,
+                              ),
                             ),
                           ),
                           const SizedBox(
                             height: 30,
                           ),
-                          SpaceCard(
-                            space: Space(
-                              id: 5,
-                              name: "City of Cactus",
-                              imageURL: "assets/images/projects/space5.png",
-                              price: 20,
-                              city: "Jakarta",
-                              country: "Indonesia",
-                              rating: 3,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const DetailSpace5(),
+                                ),
+                              );
+                            },
+                            child: SpaceCard(
+                              space: Space(
+                                id: 5,
+                                name: "City of Cactus",
+                                imageURL: "assets/images/projects/space5.png",
+                                price: 20,
+                                city: "Jakarta",
+                                country: "Indonesia",
+                                rating: 3,
+                              ),
                             ),
                           ),
                         ],
